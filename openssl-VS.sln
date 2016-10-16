@@ -11,6 +11,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "openssl-win32", "openssl-wi
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		openssl.vcxitems*{9d6beeb4-2f48-444e-a43a-5c17839dbe2d}*SharedItemsImports = 9
 		openssl.vcxitems*{c2065f5e-3342-404e-91a8-357ec07d99ea}*SharedItemsImports = 4
 		openssl.vcxitems*{f3fed019-aeab-4521-bf78-23d575796dee}*SharedItemsImports = 4
 	EndGlobalSection
@@ -27,12 +28,10 @@ Global
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Release|x64.ActiveCfg = Release|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Release|x64.Build.0 = Release|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Release|x86.ActiveCfg = Release|x64
-		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Debug|x64.ActiveCfg = Debug|x64
-		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Debug|x64.Build.0 = Debug|x64
+		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Debug|x64.ActiveCfg = Debug|Win32
 		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Debug|x86.ActiveCfg = Debug|Win32
 		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Debug|x86.Build.0 = Debug|Win32
-		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Release|x64.ActiveCfg = Release|x64
-		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Release|x64.Build.0 = Release|x64
+		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Release|x64.ActiveCfg = Release|Win32
 		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Release|x86.ActiveCfg = Release|Win32
 		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
