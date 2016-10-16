@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\aes\asm\aes-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\aes\asm\aesni-mb-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\aes\asm\aesni-sha1-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\aes\asm\aesni-sha256-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\aes\asm\aesni-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\aes\asm\bsaes-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\aes\asm\vpaes-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\bn\asm\rsaz-avx2.pl" />
+    <CustomBuild Include="openssl\crypto\bn\asm\rsaz-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\bn\asm\x86_64-gf2m.pl" />
+    <CustomBuild Include="openssl\crypto\bn\asm\x86_64-mont.pl" />
+    <CustomBuild Include="openssl\crypto\bn\asm\x86_64-mont5.pl" />
+    <CustomBuild Include="openssl\crypto\camellia\asm\cmll-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\chacha\asm\chacha-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\ec\asm\ecp_nistz256-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\md5\asm\md5-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\modes\asm\aesni-gcm-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\modes\asm\ghash-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\poly1305\asm\poly1305-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\rc4\asm\rc4-md5-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\rc4\asm\rc4-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\sha\asm\sha1-mb-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\sha\asm\sha1-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\sha\asm\sha256-mb-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\sha\asm\sha512-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\whrlpool\asm\wp-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\x86_64cpuid.pl" />
+    <CustomBuild Include="openssl\engines\asm\e_padlock-x86_64.pl" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\aes\asm\aes-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\aes\asm\aesni-mb-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\aes\asm\aesni-sha1-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\aes\asm\aesni-sha256-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\aes\asm\aesni-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\aes\asm\bsaes-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\aes\asm\vpaes-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\bn\asm\rsaz-avx2.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\bn\asm\rsaz-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\bn\asm\x86_64-gf2m.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\bn\asm\x86_64-mont.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\bn\asm\x86_64-mont5.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\camellia\asm\cmll-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\chacha\asm\chacha-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\ec\asm\ecp_nistz256-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\md5\asm\md5-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\modes\asm\aesni-gcm-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\modes\asm\ghash-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\poly1305\asm\poly1305-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\rc4\asm\rc4-md5-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\rc4\asm\rc4-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\sha\asm\sha1-mb-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\sha\asm\sha1-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\sha\asm\sha256-mb-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\sha\asm\sha512-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\whrlpool\asm\wp-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\crypto\x86_64cpuid.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="openssl\engines\asm\e_padlock-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) -DNEAR -Ox -g "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C2065F5E-3342-404E-91A8-357EC07D99EA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>opensslwin64</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+    <Import Project="openssl.vcxitems" Label="Shared" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_MONT5;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;AES_ASM;VPAES_ASM;BSAES_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM;L_ENDIAN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4090;4146;4267;4244</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_MONT5;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;AES_ASM;VPAES_ASM;BSAES_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM;L_ENDIAN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4090;4146;4267;4244</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
