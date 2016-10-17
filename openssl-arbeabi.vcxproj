@@ -17,22 +17,6 @@
       <Configuration>Release</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x86">
-      <Configuration>Debug</Configuration>
-      <Platform>x86</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x86">
-      <Configuration>Release</Configuration>
-      <Platform>x86</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7d1d2793-d4c2-4811-ab50-8407ad02e5e9}</ProjectGuid>
@@ -43,35 +27,19 @@
     <ApplicationTypeRevision>2.0</ApplicationTypeRevision>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>Clang_3_8</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>Clang_3_8</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>Clang_3_8</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>Clang_3_8</PlatformToolset>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>Clang_3_8</PlatformToolset>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
+    <UseOfStl>c++_static</UseOfStl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>Clang_3_8</PlatformToolset>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
+    <UseOfStl>c++_static</UseOfStl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -92,60 +60,36 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <UseMultiToolTask>true</UseMultiToolTask>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <UseMultiToolTask>true</UseMultiToolTask>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-    </ClCompile>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-    </ClCompile>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-    </ClCompile>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-    </ClCompile>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>OPENSSL_NO_DYNAMIC_ENGINE;NO_WINDOWS_BRAINDEATH;OPENSSL_NO_ASM%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(Sysroot)\usr\include;$(StlIncludeDirectories)$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;$(MSBuildThisFileDirectory)openssl\crypto\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>OPENSSL_NO_DYNAMIC_ENGINE;NO_WINDOWS_BRAINDEATH;OPENSSL_NO_ASM%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(Sysroot)\usr\include;$(StlIncludeDirectories)$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;$(MSBuildThisFileDirectory)openssl\crypto\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">

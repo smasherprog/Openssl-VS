@@ -1427,6 +1427,93 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3err.c">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\bio_ssl.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\d1_lib.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\d1_msg.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\d1_srtp.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\methods.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\pqueue.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_cbc.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_enc.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_lib.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_msg.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_asn1.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_cert.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_ciph.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_conf.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_err.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_init.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_lib.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_mcnf.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_rsa.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_sess.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_stat.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_txt.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_utst.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_enc.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_ext.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_lib.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_reneg.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_trce.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\tls_srp.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Config\openssl\opensslconf.h" />
