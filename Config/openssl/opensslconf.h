@@ -52,6 +52,13 @@ extern "C" {
 #endif
 #endif
 
+#ifndef OPENSSLDIR
+#define OPENSSLDIR "/usr/local/ssl"
+#endif
+#ifndef ENGINESDIR
+#define ENGINESDIR "/usr/local/ssl/lib"
+#endif
+
 #ifndef OPENSSL_NO_DYNAMIC_ENGINE
 #define OPENSSL_NO_DYNAMIC_ENGINE
 #endif
