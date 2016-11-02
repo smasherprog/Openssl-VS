@@ -1,12 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
+    <ProjectConfiguration Include="Debug_shared|Win32">
+      <Configuration>Debug_shared</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
+    <ProjectConfiguration Include="Debug_static|Win32">
+      <Configuration>Debug_static</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_shared|Win32">
+      <Configuration>Release_shared</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_static|Win32">
+      <Configuration>Release_static</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -17,452 +25,802 @@
     <CustomBuild Include="openssl\crypto\aes\asm\aes-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\aes\asm\aesni-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\aes\asm\vpaes-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\bf\asm\bf-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\bn\asm\bn-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\bn\asm\co-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\bn\asm\x86-gf2m.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\bn\asm\x86-mont.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\camellia\asm\cmll-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\cast\asm\cast-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\chacha\asm\chacha-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\des\asm\crypt586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\des\asm\des-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\ec\asm\ecp_nistz256-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\md5\asm\md5-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\modes\asm\ghash-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\poly1305\asm\poly1305-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\rc4\asm\rc4-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\ripemd\asm\rmd-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\sha\asm\sha1-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\sha\asm\sha256-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\sha\asm\sha512-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\whrlpool\asm\wp-mmx.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\x86cpuid.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="openssl\engines\asm\e_padlock-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 set ASM=nasm
 perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
 $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+set ASM=nasm
+perl "%(FullPath)"  "win32n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
+$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
+
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -472,13 +830,26 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
@@ -491,24 +862,56 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
   <ImportGroup Label="Shared">
     <Import Project="openssl.vcxitems" Label="Shared" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>openssl</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <ExtensionsToDeleteOnClean>*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>openssl</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <ExtensionsToDeleteOnClean>*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>openssl</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <ExtensionsToDeleteOnClean>*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>openssl</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <ExtensionsToDeleteOnClean>*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
@@ -518,12 +921,31 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
       <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4090;4146;4267;4244</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;L_ENDIAN;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4090;4146;4267;4244</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -535,6 +957,27 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
       <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4090;4146;4267;4244</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;L_ENDIAN;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4090;4146;4267;4244</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

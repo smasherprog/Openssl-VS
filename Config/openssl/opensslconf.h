@@ -199,15 +199,15 @@ extern "C" {
  /* Only one for the following should be defined */
 # undef SIXTY_FOUR_BIT_LONG
 
-#if _WIN64
-# define SIXTY_FOUR_BIT
-# undef THIRTY_TWO_BIT
-#elif _WIN32
+#include <cstdint>
+#if INTPTR_MAX == INT32_MAX
 # undef SIXTY_FOUR_BIT
 # define THIRTY_TWO_BIT
-#else
+#elif INTPTR_MAX == INT64_MAX
 # define SIXTY_FOUR_BIT
 # undef THIRTY_TWO_BIT
+#else
+#error "Environment not 32 or 64-bit."
 #endif
 
 

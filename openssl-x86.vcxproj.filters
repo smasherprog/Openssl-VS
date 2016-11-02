@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\aes\asm\aes-586.pl" />
+    <CustomBuild Include="openssl\crypto\aes\asm\aesni-x86.pl" />
+    <CustomBuild Include="openssl\crypto\aes\asm\vpaes-x86.pl" />
+    <CustomBuild Include="openssl\crypto\bf\asm\bf-586.pl" />
+    <CustomBuild Include="openssl\crypto\bn\asm\bn-586.pl" />
+    <CustomBuild Include="openssl\crypto\bn\asm\co-586.pl" />
+    <CustomBuild Include="openssl\crypto\bn\asm\x86-gf2m.pl" />
+    <CustomBuild Include="openssl\crypto\bn\asm\x86-mont.pl" />
+    <CustomBuild Include="openssl\crypto\camellia\asm\cmll-x86.pl" />
+    <CustomBuild Include="openssl\crypto\cast\asm\cast-586.pl" />
+    <CustomBuild Include="openssl\crypto\chacha\asm\chacha-x86.pl" />
+    <CustomBuild Include="openssl\crypto\des\asm\crypt586.pl" />
+    <CustomBuild Include="openssl\crypto\des\asm\des-586.pl" />
+    <CustomBuild Include="openssl\crypto\ec\asm\ecp_nistz256-x86.pl" />
+    <CustomBuild Include="openssl\crypto\md5\asm\md5-586.pl" />
+    <CustomBuild Include="openssl\crypto\modes\asm\ghash-x86.pl" />
+    <CustomBuild Include="openssl\crypto\poly1305\asm\poly1305-x86.pl" />
+    <CustomBuild Include="openssl\crypto\rc4\asm\rc4-586.pl" />
+    <CustomBuild Include="openssl\crypto\ripemd\asm\rmd-586.pl" />
+    <CustomBuild Include="openssl\crypto\sha\asm\sha1-586.pl" />
+    <CustomBuild Include="openssl\crypto\sha\asm\sha256-586.pl" />
+    <CustomBuild Include="openssl\crypto\sha\asm\sha512-586.pl" />
+    <CustomBuild Include="openssl\crypto\whrlpool\asm\wp-mmx.pl" />
+    <CustomBuild Include="openssl\crypto\x86cpuid.pl" />
+    <CustomBuild Include="openssl\engines\asm\e_padlock-x86.pl" />
+  </ItemGroup>
+</Project>
