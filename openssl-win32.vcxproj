@@ -883,6 +883,12 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
     <TargetExt>.lib</TargetExt>
     <ExtensionsToDeleteOnClean>*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
     <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <ReferencePath>$(VC_ReferencesPath_x86);</ReferencePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+    <LibraryWPath>$(WindowsSDK_MetadataPath);</LibraryWPath>
+    <SourcePath>$(VC_SourcePath);</SourcePath>
+    <ExcludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);</ExcludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
@@ -892,6 +898,12 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
     <TargetExt>.lib</TargetExt>
     <ExtensionsToDeleteOnClean>*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
     <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <ReferencePath>$(VC_ReferencesPath_x86);</ReferencePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+    <LibraryWPath>$(WindowsSDK_MetadataPath);</LibraryWPath>
+    <SourcePath>$(VC_SourcePath);</SourcePath>
+    <ExcludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);</ExcludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
@@ -901,6 +913,12 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
     <TargetExt>.lib</TargetExt>
     <ExtensionsToDeleteOnClean>*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
     <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <ReferencePath>$(VC_ReferencesPath_x86);</ReferencePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+    <LibraryWPath>$(WindowsSDK_MetadataPath);</LibraryWPath>
+    <SourcePath>$(VC_SourcePath);</SourcePath>
+    <ExcludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);</ExcludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
@@ -910,15 +928,21 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
     <TargetExt>.lib</TargetExt>
     <ExtensionsToDeleteOnClean>*.cdf;*.cache;*.obj;*.obj.enc;*.ilk;*.ipdb;*.iobj;*.resources;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.meta;*.tlog;*.manifest;*.res;*.pch;*.exp;*.idb;*.rep;*.xdc;*.pdb;*_manifest.rc;*.bsc;*.sbr;*.xml;*.metagen;*.bi</ExtensionsToDeleteOnClean>
     <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <ReferencePath>$(VC_ReferencesPath_x86);</ReferencePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+    <LibraryWPath>$(WindowsSDK_MetadataPath);</LibraryWPath>
+    <SourcePath>$(VC_SourcePath);</SourcePath>
+    <ExcludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);</ExcludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;L_ENDIAN;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4090;4146;4267;4244</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MinimalRebuild>false</MinimalRebuild>
@@ -930,12 +954,12 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;L_ENDIAN;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4090;4146;4267;4244</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MinimalRebuild>false</MinimalRebuild>
@@ -948,13 +972,13 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;L_ENDIAN;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4090;4146;4267;4244</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -968,13 +992,13 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM;OPENSSL_SYS_WIN32;WIN32_LEAN_AND_MEAN;L_ENDIAN;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4090;4146;4267;4244</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>

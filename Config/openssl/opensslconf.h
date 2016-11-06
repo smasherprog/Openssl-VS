@@ -199,7 +199,7 @@ extern "C" {
  /* Only one for the following should be defined */
 # undef SIXTY_FOUR_BIT_LONG
 
-#include <cstdint>
+#include <stdint.h>
 #if INTPTR_MAX == INT32_MAX
 # undef SIXTY_FOUR_BIT
 # define THIRTY_TWO_BIT

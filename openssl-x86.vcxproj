@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="14.0">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug_shared|x86">
       <Configuration>Debug_shared</Configuration>
@@ -18,807 +18,1236 @@
       <Platform>x86</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <PropertyGroup>
+    <mycflags>-DOPENSSL_NO_DYNAMIC_ENGINE -DOPENSSL_BN_ASM_PART_WORDS -DOPENSSL_IA32_SSE2 -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_GF2m -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DRC4_ASM -DMD5_ASM -DRMD160_ASM -DAES_ASM -DVPAES_ASM -DWHIRLPOOL_ASM -DGHASH_ASM -DECP_NISTZ256_ASM -DPOLY1305_ASM</mycflags>
+  </PropertyGroup>
   <ItemGroup>
     <CustomBuild Include="openssl\crypto\aes\asm\aes-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\aes\asm\aesni-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\aes\asm\vpaes-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\bf\asm\bf-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\bn\asm\bn-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\bn\asm\co-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\bn\asm\x86-gf2m.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\bn\asm\x86-mont.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\camellia\asm\cmll-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\cast\asm\cast-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\chacha\asm\chacha-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\des\asm\crypt586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\des\asm\des-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\ec\asm\ecp_nistz256-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\md5\asm\md5-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\modes\asm\ghash-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\poly1305\asm\poly1305-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\rc4\asm\rc4-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\ripemd\asm\rmd-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\sha\asm\sha1-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\sha\asm\sha256-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\sha\asm\sha512-586.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\whrlpool\asm\wp-mmx.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\crypto\x86cpuid.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
     <CustomBuild Include="openssl\engines\asm\e_padlock-x86.pl">
       <FileType>Document</FileType>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
-set ASM=nasm
-perl "%(FullPath)"  "x86n" "$(mycflags)" "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm"
-$(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).asm" -o$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj
 
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android $(mycflags) %(Filename).s &gt;%(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
 </Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">Performing Custom Build Tools %(Filename).s</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">Performing Custom Build Tools %(Filename).s</Message>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\aes\asm\aes-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">%(PreprocessorDefinitions);$(mycflags)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bf\asm\bf-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bn\asm\bn-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\aes\asm\aesni-x86.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\aes\asm\vpaes-x86.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bn\asm\co-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bn\asm\x86-gf2m.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\cast\asm\cast-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bn\asm\x86-mont.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\camellia\asm\cmll-x86.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\chacha\asm\chacha-x86.s ">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\des\asm\crypt586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\des\asm\des-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\ec\asm\ecp_nistz256-x86.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\md5\asm\md5-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\modes\asm\ghash-x86.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\poly1305\asm\poly1305-x86.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\rc4\asm\rc4-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\ripemd\asm\rmd-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\sha\asm\sha1-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\sha\asm\sha256-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\sha\asm\sha512-586.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\whrlpool\asm\wp-mmx.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\x86cpuid.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\engines\asm\e_padlock-x86.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+    </ClCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{83c8107b-0fd1-4d7f-9536-142ec6a36d99}</ProjectGuid>
@@ -833,21 +1262,29 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>Clang_3_8</PlatformToolset>
+    <UseOfStl>c++_static</UseOfStl>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>Clang_3_8</PlatformToolset>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>Clang_3_8</PlatformToolset>
+    <UseOfStl>c++_static</UseOfStl>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>Clang_3_8</PlatformToolset>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
@@ -857,38 +1294,83 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <PreprocessorDefinitions>;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NO_WINDOWS_BRAINDEATH;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <Verbose>false</Verbose>
+      <CLanguageStandard>Default</CLanguageStandard>
+      <CompileAs>Default</CompileAs>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <PreprocessorDefinitions>;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NO_WINDOWS_BRAINDEATH;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <Verbose>false</Verbose>
+      <CLanguageStandard>Default</CLanguageStandard>
+      <CompileAs>Default</CompileAs>
     </ClCompile>
+    <Link>
+      <VerboseOutput>false</VerboseOutput>
+      <IncrementalLink>false</IncrementalLink>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);NO_WINDOWS_BRAINDEATH;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <Verbose>false</Verbose>
+      <CLanguageStandard>Default</CLanguageStandard>
+      <CompileAs>Default</CompileAs>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);NO_WINDOWS_BRAINDEATH;OPENSSL_NO_DYNAMIC_ENGINE;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_IA32_SSE2;OPENSSL_BN_ASM_MONT;OPENSSL_BN_ASM_GF2m;SHA1_ASM;SHA256_ASM;SHA512_ASM;RC4_ASM;MD5_ASM;RMD160_ASM;AES_ASM;VPAES_ASM;WHIRLPOOL_ASM;GHASH_ASM;ECP_NISTZ256_ASM;POLY1305_ASM</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <Verbose>false</Verbose>
+      <CLanguageStandard>Default</CLanguageStandard>
+      <CompileAs>Default</CompileAs>
     </ClCompile>
+    <Link>
+      <IncrementalLink>false</IncrementalLink>
+    </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

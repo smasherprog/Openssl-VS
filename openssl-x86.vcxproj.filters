@@ -27,4 +27,31 @@
     <CustomBuild Include="openssl\crypto\x86cpuid.pl" />
     <CustomBuild Include="openssl\engines\asm\e_padlock-x86.pl" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\aes\asm\aes-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bf\asm\bf-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bn\asm\bn-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\aes\asm\aesni-x86.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\aes\asm\vpaes-x86.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bn\asm\x86-gf2m.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\cast\asm\cast-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bn\asm\x86-mont.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\camellia\asm\cmll-x86.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\chacha\asm\chacha-x86.s " />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\x86cpuid.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bn\asm\co-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\des\asm\crypt586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\des\asm\des-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\ec\asm\ecp_nistz256-x86.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\md5\asm\md5-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\modes\asm\ghash-x86.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\poly1305\asm\poly1305-x86.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\rc4\asm\rc4-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\ripemd\asm\rmd-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\sha\asm\sha1-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\sha\asm\sha256-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\sha\asm\sha512-586.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\whrlpool\asm\wp-mmx.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\engines\asm\e_padlock-x86.s" />
+  </ItemGroup>
 </Project>

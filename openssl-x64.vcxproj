@@ -55,33 +55,47 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">
+    <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
