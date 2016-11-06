@@ -1,2 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="openssl\crypto\aes\aes_core.c" />
+    <ClCompile Include="openssl\crypto\aes\aes_cbc.c" />
+    <ClCompile Include="openssl\crypto\bf\bf_enc.c" />
+    <ClCompile Include="openssl\crypto\pkcs7\bio_pk7.c" />
+    <ClCompile Include="openssl\crypto\rand\rand_egd.c" />
+    <ClCompile Include="openssl\crypto\rand\rand_vms.c" />
+    <ClCompile Include="openssl\crypto\rc4\rc4_enc.c" />
+    <ClCompile Include="openssl\crypto\rc4\rc4_skey.c" />
+    <ClCompile Include="openssl\crypto\rsa\rsa_depr.c" />
+    <ClCompile Include="openssl\crypto\rsa\rsa_meth.c" />
+    <ClCompile Include="openssl\crypto\rsa\rsa_x931g.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_asn1.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_conf.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_lib.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_req_print.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_req_utils.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_rsp_print.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_rsp_sign.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_rsp_utils.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_rsp_verify.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_verify_ctx.c" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\engines\asm\e_padlock-x86_64.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\x86_64cpuid.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\modes\asm\ghash-x86_64.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\ec\asm\ecp_nistz256-x86_64.s" />
+    <ClCompile Include="openssl\crypto\bn\bn_asm.c" />
+    <ClCompile Include="openssl\crypto\des\des_enc.c" />
+    <ClCompile Include="openssl\crypto\cast\c_enc.c" />
+    <ClCompile Include="openssl\crypto\camellia\cmll_misc.c" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\camellia\asm\cmll-x86_64.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\chacha\asm\chacha-x86_64.s" />
+    <ClCompile Include="openssl\crypto\des\fcrypt_b.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\engines\asm\e_padlock-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\x86_64cpuid.pl" />
+    <CustomBuild Include="openssl\crypto\modes\asm\ghash-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\ec\asm\ecp_nistz256-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\camellia\asm\cmll-x86_64.pl" />
+    <CustomBuild Include="openssl\crypto\chacha\asm\chacha-x86_64.pl" />
+  </ItemGroup>
+</Project>

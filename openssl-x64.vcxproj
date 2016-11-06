@@ -18,6 +18,361 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="openssl\crypto\aes\aes_cbc.c" />
+    <ClCompile Include="openssl\crypto\aes\aes_core.c" />
+    <ClCompile Include="openssl\crypto\bf\bf_enc.c" />
+    <ClCompile Include="openssl\crypto\bn\bn_asm.c" />
+    <ClCompile Include="openssl\crypto\camellia\cmll_misc.c" />
+    <ClCompile Include="openssl\crypto\cast\c_enc.c" />
+    <ClCompile Include="openssl\crypto\des\des_enc.c" />
+    <ClCompile Include="openssl\crypto\des\fcrypt_b.c" />
+    <ClCompile Include="openssl\crypto\pkcs7\bio_pk7.c" />
+    <ClCompile Include="openssl\crypto\rand\rand_egd.c" />
+    <ClCompile Include="openssl\crypto\rand\rand_vms.c" />
+    <ClCompile Include="openssl\crypto\rc4\rc4_enc.c" />
+    <ClCompile Include="openssl\crypto\rc4\rc4_skey.c" />
+    <ClCompile Include="openssl\crypto\rsa\rsa_depr.c" />
+    <ClCompile Include="openssl\crypto\rsa\rsa_meth.c" />
+    <ClCompile Include="openssl\crypto\rsa\rsa_x931g.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_asn1.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_conf.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_lib.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_req_print.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_req_utils.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_rsp_print.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_rsp_sign.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_rsp_utils.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_rsp_verify.c" />
+    <ClCompile Include="openssl\crypto\ts\ts_verify_ctx.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\engines\asm\e_padlock-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\engines\asm\e_padlock-x86_64.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\x86_64cpuid.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\x86_64cpuid.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\modes\asm\ghash-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\modes\asm\ghash-x86_64.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\ec\asm\ecp_nistz256-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\ec\asm\ecp_nistz256-x86_64.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\camellia\asm\cmll-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\camellia\asm\cmll-x86_64.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\chacha\asm\chacha-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" android %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\chacha\asm\chacha-x86_64.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x86'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">
+      </CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <PropertyGroup>
+    <mycflags>-DOPENSSL_NO_DYNAMIC_ENGINE -DNO_WINDOWS_BRAINDEATH</mycflags>
+  </PropertyGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1475a78a-1f1c-4a18-a4f9-668230d3007a}</ProjectGuid>
     <Keyword>Android</Keyword>
@@ -31,21 +386,33 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>Clang_3_8</PlatformToolset>
+    <UseOfStl>c++_static</UseOfStl>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
+    <ThumbMode>Thumb</ThumbMode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>Clang_3_8</PlatformToolset>
+    <UseOfStl>c++_shared</UseOfStl>
+    <ThumbMode>Thumb</ThumbMode>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>Clang_3_8</PlatformToolset>
+    <UseOfStl>c++_static</UseOfStl>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
+    <ThumbMode>Thumb</ThumbMode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>Clang_3_8</PlatformToolset>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
+    <ThumbMode>Thumb</ThumbMode>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
@@ -57,46 +424,72 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>openssl</TargetName>
+    <TargetExt>.a</TargetExt>
+    <IncludePath>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>openssl</TargetName>
+    <TargetExt>.so</TargetExt>
+    <IncludePath>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>openssl</TargetName>
+    <TargetExt>.a</TargetExt>
+    <IncludePath>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>openssl</TargetName>
+    <TargetExt>.so</TargetExt>
+    <IncludePath>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);OPENSSL_NO_DYNAMIC_ENGINE;NO_WINDOWS_BRAINDEATH</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);OPENSSL_NO_DYNAMIC_ENGINE;NO_WINDOWS_BRAINDEATH</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <IncrementalLink>false</IncrementalLink>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);OPENSSL_NO_DYNAMIC_ENGINE;NO_WINDOWS_BRAINDEATH</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\;$(MSBuildThisFileDirectory)openssl\crypto\modes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);OPENSSL_NO_DYNAMIC_ENGINE;NO_WINDOWS_BRAINDEATH</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <IncrementalLink>false</IncrementalLink>
+    </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

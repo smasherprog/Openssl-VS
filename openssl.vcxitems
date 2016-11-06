@@ -1,1789 +1,632 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup Label="Globals">
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
-    <HasSharedItems>true</HasSharedItems>
-    <ItemsProjectGuid>{9D6BEEB4-2F48-444E-A43A-5C17839DBE2D}</ItemsProjectGuid>
-  </PropertyGroup>
-  <ItemDefinitionGroup>
-    <ClCompile>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
-    </ClCompile>
-  </ItemDefinitionGroup>
-  <ItemGroup>
-    <ProjectCapability Include="SourceItemsFromImports" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_cfb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_ecb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_ige.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_misc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_ofb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_wrap.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\asn_mstbl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\n_pkey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\p5_scrypt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\tasn_scn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\x_spki.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\x_val.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\arch\async_null.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\arch\async_posix.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\arch\async_win.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\async.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\async_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\async_wait.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio\bf_lbuf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio\bio_meth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio\b_addr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio\b_sock2.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\blake2\blake2b.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\blake2\blake2s.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\blake2\m_blake2b.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\blake2\m_blake2s.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn\bn_depr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn\bn_dh.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn\bn_intern.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn\bn_srp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn\bn_x931p.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cpt_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cryptlib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_b64.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_log.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_oct.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_policy.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_prn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_sct.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_sct_ctx.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_vfy.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_x509v3.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cversion.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh\dh_depr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh\dh_meth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso\dso_vms.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso\dso_win32.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\curve25519.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecdh_kdf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecdh_ossl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecdsa_ossl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecdsa_sign.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecdsa_vrf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistp224.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistp256.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistp521.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistputil.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistz256.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecx_meth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ec_kmeth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine\tb_eckey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\cmeth_lib.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\e_chacha20_poly1305.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\e_old.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\e_seed.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\m_md2.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\m_md5_sha1.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\p_open.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\scrypt.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ex_data.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\init.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\kdf\hkdf.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\kdf\kdf_err.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\kdf\tls1_prf.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\mem.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\mem_dbg.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\mem_sec.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes\cts128.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes\ocb128.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp\ocsp_asn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp\v3_ocsp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_dir.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_fips.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_fopen.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_init.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_str.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_time.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem\pem_x509.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem\pem_xaux.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12\p12_sbag.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\poly1305\poly1305.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa\rsa_ossl.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\sha\sha1dgst.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\sha\sha256.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\threads_none.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\threads_pthread.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\threads_win.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\uid.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_bitstr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_d2i_fp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_digest.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_dup.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_gentm.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_i2d_fp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_int.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_mbstr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_object.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_octet.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_print.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_sign.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_strex.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_strnid.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_time.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_type.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_utctm.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_utf8.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_verify.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/ameth_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn1_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn1_gen.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn1_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn1_par.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn_mime.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn_moid.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn_pack.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/bio_asn1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/bio_ndef.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/d2i_pr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/d2i_pu.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/evp_asn1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/f_int.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/f_string.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/i2d_pr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/i2d_pu.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/nsseq.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/p5_pbe.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/p5_pbev2.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/p8_pkey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/t_bitst.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/t_pkey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/t_spki.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_dec.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_fre.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_new.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_prn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_typ.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_utl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_algor.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_bignum.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_info.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_long.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_pkey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_sig.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bf/bf_cfb64.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bf/bf_ecb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bf/bf_ofb64.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bf/bf_skey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/b_dump.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/b_print.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/b_sock.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bf_buff.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bf_nbio.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bf_null.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bio_cb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bio_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bio_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_acpt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_bio.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_conn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_dgram.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_fd.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_file.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_log.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_mem.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_null.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_sock.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_add.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_blind.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_const.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_ctx.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_div.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_exp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_exp2.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_gcd.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_gf2m.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_kron.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_mod.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_mont.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_mpi.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_mul.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_nist.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_prime.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_print.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/rsaz_exp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_rand.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_recp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_shift.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_sqr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_sqrt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_word.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\buffer/buf_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\buffer/buffer.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\camellia/cmll_ecb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\camellia/cmll_ofb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\camellia/cmll_cfb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\camellia/cmll_ctr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cast/c_skey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cast/c_ecb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cast/c_cfb64.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cast/c_ofb64.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cmac/cm_ameth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cmac/cm_pmeth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cmac/cmac.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_asn1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_att.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_io.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_smime.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_sd.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_dd.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_cd.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_env.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_ess.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_pwri.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_kari.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\comp/c_zlib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\comp/comp_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\comp/comp_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_api.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_def.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_mall.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_mod.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_sap.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/cbc_cksm.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/cbc_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/cfb64ede.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/cfb64enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/cfb_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/ecb3_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/ecb_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/fcrypt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/ofb64ede.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/ofb64enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/ofb_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/pcbc_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/qud_cksm.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/rand_key.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/rpc_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/set_key.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/str2key.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/xcbc_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_ameth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_asn1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_check.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_gen.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_key.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_kdf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_pmeth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_prn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_rfc5114.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_ameth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_asn1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_depr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_gen.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_key.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_ossl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_pmeth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_prn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_sign.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_vrf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso/dso_dl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso/dso_dlfcn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso/dso_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso/dso_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso/dso_openssl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec2_mult.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec2_oct.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec2_smpl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_ameth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_asn1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_check.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_curve.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_cvt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_key.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_mult.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_oct.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_pmeth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_print.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/eck_prn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ecp_mont.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ecp_oct.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ecp_nist.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ecp_smpl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_all.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_cryptodev.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_cnf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_ctrl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_dyn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_fat.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_init.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_list.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_pkey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_rdrand.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_openssl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_table.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_asnmth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_cipher.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_dh.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_digest.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_dsa.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_pkmeth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_rand.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_rsa.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\err/err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\err/err_all.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\err/err_prn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/bio_b64.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/bio_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/bio_md.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/bio_ok.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/c_allc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/c_alld.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/digest.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_aes.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_aes_cbc_hmac_sha1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_aes_cbc_hmac_sha256.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_camellia.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_bf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_cast.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_des.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_des3.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_idea.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_null.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_rc2.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_rc4.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_rc4_hmac_md5.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_rc5.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_xcbc_d.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/encode.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_cnf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_key.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_pbe.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_pkey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_md4.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_md5.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_mdc2.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_null.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_ripemd.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_sha1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_sigver.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_wp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/names.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p5_crpt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p5_crpt2.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_dec.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_seal.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_sign.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_verify.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/pmeth_fn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/pmeth_gn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/pmeth_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\hmac/hm_ameth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\hmac/hm_pmeth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\hmac/hmac.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\idea/i_cbc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\idea/i_cfb64.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\idea/i_ofb64.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\idea/i_ecb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\idea/i_skey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\lhash/lh_stats.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\lhash/lhash.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\md4/md4_dgst.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\md4/md4_one.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\md5/md5_dgst.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\md5/md5_one.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\mdc2/mdc2dgst.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\mdc2/mdc2_one.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/cbc128.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/ccm128.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/cfb128.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/ctr128.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/gcm128.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/ofb128.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/xts128.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/wrap128.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\objects/o_names.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\objects/obj_dat.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\objects/obj_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\objects/obj_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\objects/obj_xref.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_cl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_ext.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_ht.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_prn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_srv.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_vfy.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_all.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_info.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_oth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_pk8.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_pkey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_sign.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pvkfmt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_add.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_asn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_attr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_crpt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_crt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_decr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_init.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_key.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_kiss.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_mutl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_npas.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_p8d.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_p8e.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_utl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/pk12err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_asn1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_attr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_doit.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_mime.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_smime.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pkcs7err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/md_rand.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/rand_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/rand_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/rand_unix.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/rand_win.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/randfile.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rc2/rc2_cbc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rc2/rc2_ecb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rc2/rc2_skey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rc2/rc2cfb64.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rc2/rc2ofb64.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ripemd/rmd_dgst.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ripemd/rmd_one.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_ameth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_asn1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_chk.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_crpt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_gen.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_none.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_null.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_oaep.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_pk1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_pmeth.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_prn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_pss.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_saos.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_sign.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_ssl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_x931.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\seed/seed.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\seed/seed_ecb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\seed/seed_cbc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\seed/seed_cfb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\seed/seed_ofb.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\sha/sha1_one.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\sha/sha512.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\srp/srp_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\srp/srp_vfy.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\stack/stack.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ts/ts_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\txt_db/txt_db.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ui/ui_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ui/ui_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ui/ui_openssl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ui/ui_util.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\whrlpool/wp_dgst.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\whrlpool\wp_block.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/by_dir.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/by_file.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_att.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_cmp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_d2.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_def.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_ext.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_lu.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_obj.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_r2x.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_req.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_set.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_trs.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_txt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_v3.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_vfy.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_vpm.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509cset.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509name.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509rset.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509spki.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509type.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x_all.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_cache.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_data.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_map.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_node.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_tree.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_akey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_alt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_bcons.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_bitst.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_conf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_cpols.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_crld.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_enum.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_extku.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_genn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_ia5.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_info.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_int.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_ncons.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_pci.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_pcons.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_pku.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_pmaps.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_prn.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_purp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_skey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_sxnet.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_utl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3\v3_addr.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3\v3_akeya.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3\v3_asid.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3\v3_pcia.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3\v3_tlsf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\t_crl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\t_req.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\t_x509.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_attrib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_crl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_exten.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_name.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_pubkey.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_req.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_x509.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_x509a.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\engines\e_padlock.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\bio_ssl.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\d1_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\d1_msg.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\d1_srtp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\methods.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\pqueue.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\record\dtls1_bitmap.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\record\rec_layer_d1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\record\rec_layer_s3.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\record\ssl3_buffer.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\record\ssl3_record.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_cbc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_msg.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_asn1.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_cert.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_ciph.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_conf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_err.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_init.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_mcnf.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_rsa.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_sess.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_stat.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_txt.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_utst.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\statem\statem.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\statem\statem_clnt.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\statem\statem_dtls.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\statem\statem_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\statem\statem_srvr.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_enc.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_ext.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_lib.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_reneg.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_trce.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\tls_srp.c">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Config\openssl\opensslconf.h" />
-  </ItemGroup>
+	<PropertyGroup Label="Globals">
+		<MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+		<HasSharedItems>true</HasSharedItems>
+		<ItemsProjectGuid>{9D6BEEB4-2F48-444E-A43A-5C17839DBE2D}</ItemsProjectGuid>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+		</ClCompile>
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<ProjectCapability Include="SourceItemsFromImports" />
+	</ItemGroup>
+	<ItemGroup>
+	
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_cfb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_ecb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_ige.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_misc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_ofb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\aes\aes_wrap.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_bitstr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_d2i_fp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_digest.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_dup.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_gentm.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_i2d_fp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_int.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_mbstr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_object.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_octet.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_print.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_sign.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_strex.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_strnid.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_time.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_type.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_utctm.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_utf8.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/a_verify.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/ameth_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\asn_mstbl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn1_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn1_gen.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn1_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn1_par.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn_mime.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn_moid.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/asn_pack.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/bio_asn1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/bio_ndef.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/d2i_pr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/d2i_pu.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/evp_asn1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/f_int.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/f_string.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/i2d_pr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/i2d_pu.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\n_pkey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/nsseq.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/p5_pbe.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/p5_pbev2.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\p5_scrypt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/p8_pkey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/t_bitst.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/t_pkey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/t_spki.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_dec.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_fre.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_new.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_prn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\tasn_scn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_typ.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/tasn_utl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_algor.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_bignum.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_info.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_long.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_pkey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1/x_sig.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\x_spki.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\asn1\x_val.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\arch\async_null.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\arch\async_posix.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\arch\async_win.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\async.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\async_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\async\async_wait.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio\b_addr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/b_dump.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/b_print.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/b_sock.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio\b_sock2.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio\bf_lbuf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bf/bf_cfb64.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bf/bf_ecb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bf/bf_ofb64.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bf/bf_skey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bf_buff.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bf_nbio.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bf_null.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bio_cb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bio_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bio_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio\bio_meth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_acpt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_bio.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_conn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_dgram.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_fd.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_file.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_log.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_mem.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_null.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bio/bss_sock.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\blake2\blake2b.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\blake2\blake2s.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\blake2\m_blake2b.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\blake2\m_blake2s.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_add.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_blind.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_const.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_ctx.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn\bn_depr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn\bn_dh.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_div.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_exp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_exp2.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_gcd.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_gf2m.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn\bn_intern.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_kron.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_mod.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_mont.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_mpi.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_mul.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_nist.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_prime.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_print.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/rsaz_exp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_rand.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_recp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_shift.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_sqr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_sqrt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn\bn_srp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn\bn_x931p.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\bn/bn_word.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\buffer/buf_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\buffer/buffer.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\camellia/cmll_ecb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\camellia/cmll_ofb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\camellia/cmll_cfb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\camellia/cmll_ctr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cast/c_skey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cast/c_ecb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cast/c_cfb64.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cast/c_ofb64.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cmac/cm_ameth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cmac/cm_pmeth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cmac/cmac.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_asn1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_att.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_io.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_smime.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_sd.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_dd.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_cd.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_env.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_ess.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_pwri.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cms/cms_kari.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\comp/c_zlib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\comp/comp_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\comp/comp_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_api.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_def.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_mall.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_mod.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\conf/conf_sap.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cpt_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cryptlib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_b64.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_log.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_oct.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_policy.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_prn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_sct.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_sct_ctx.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_vfy.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ct\ct_x509v3.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\cversion.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/cbc_cksm.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/cbc_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/cfb64ede.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/cfb64enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/cfb_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/ecb3_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/ecb_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/fcrypt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/ofb64ede.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/ofb64enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/ofb_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/pcbc_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/qud_cksm.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/rand_key.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/rpc_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/set_key.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/str2key.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\des/xcbc_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_ameth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_asn1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_check.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh\dh_depr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_gen.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_key.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_kdf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh\dh_meth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_pmeth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_prn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dh/dh_rfc5114.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_ameth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_asn1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_depr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_gen.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_key.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_ossl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_pmeth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_prn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_sign.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dsa/dsa_vrf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso/dso_dl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso/dso_dlfcn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso/dso_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso/dso_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso/dso_openssl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso\dso_vms.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\dso\dso_win32.c"/>	
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\curve25519.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec2_mult.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec2_oct.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec2_smpl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_ameth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_asn1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_check.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_curve.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_cvt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_key.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ec_kmeth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_mult.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_oct.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_pmeth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ec_print.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecdh_kdf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecdh_ossl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecdsa_ossl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecdsa_sign.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecdsa_vrf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/eck_prn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ecp_mont.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ecp_oct.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ecp_nist.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec/ecp_smpl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistp224.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistp256.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistp521.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistputil.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistz256.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecx_meth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_all.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_cryptodev.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_cnf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_ctrl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_dyn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_fat.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_init.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_list.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_pkey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_rdrand.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_openssl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_table.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_asnmth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_cipher.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_dh.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_digest.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_dsa.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine\tb_eckey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_pkmeth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_rand.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/tb_rsa.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\err/err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\err/err_all.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\err/err_prn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/bio_b64.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/bio_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/bio_md.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/bio_ok.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/c_allc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/c_alld.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\cmeth_lib.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/digest.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_aes.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_aes_cbc_hmac_sha1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_aes_cbc_hmac_sha256.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_camellia.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\e_chacha20_poly1305.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_bf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_cast.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_des.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_des3.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_idea.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_null.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\e_old.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_rc2.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_rc4.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_rc4_hmac_md5.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_rc5.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\e_seed.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/e_xcbc_d.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/encode.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_cnf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_key.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_pbe.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/evp_pkey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\m_md2.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_md4.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_md5.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\m_md5_sha1.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_mdc2.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_null.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_ripemd.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_sha1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_sigver.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/m_wp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/names.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\p_open.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p5_crpt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p5_crpt2.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_dec.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_seal.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_sign.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/p_verify.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/pmeth_fn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/pmeth_gn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp/pmeth_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\evp\scrypt.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ex_data.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\hmac/hm_ameth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\hmac/hm_pmeth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\hmac/hmac.c"/>	
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\idea/i_cbc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\idea/i_cfb64.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\idea/i_ofb64.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\idea/i_ecb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\idea/i_skey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\init.c" />	
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\kdf\hkdf.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\kdf\kdf_err.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\kdf\tls1_prf.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\lhash/lh_stats.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\lhash/lhash.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\md4/md4_dgst.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\md4/md4_one.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\md5/md5_dgst.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\md5/md5_one.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\mdc2/mdc2dgst.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\mdc2/mdc2_one.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\mem.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\mem_dbg.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\mem_sec.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes\cts128.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/cbc128.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/ccm128.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/cfb128.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/ctr128.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/gcm128.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes\ocb128.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/ofb128.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/xts128.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/wrap128.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_dir.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_fips.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_fopen.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_init.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_str.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\o_time.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\objects/o_names.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\objects/obj_dat.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\objects/obj_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\objects/obj_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\objects/obj_xref.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp\ocsp_asn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_cl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_ext.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_ht.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_prn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_srv.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp/ocsp_vfy.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ocsp\v3_ocsp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_all.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_info.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_oth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_pk8.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_pkey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pem_sign.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem\pem_x509.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem\pem_xaux.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pem/pvkfmt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_add.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_asn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_attr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_crpt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_crt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_decr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_init.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_key.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_kiss.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_mutl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_npas.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_p8d.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_p8e.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12\p12_sbag.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/p12_utl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs12/pk12err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_asn1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_attr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_doit.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_mime.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pk7_smime.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\pkcs7/pkcs7err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\poly1305\poly1305.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/md_rand.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/rand_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/rand_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/rand_unix.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/rand_win.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rand/randfile.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rc2/rc2_cbc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rc2/rc2_ecb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rc2/rc2_skey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rc2/rc2cfb64.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rc2/rc2ofb64.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ripemd/rmd_dgst.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ripemd/rmd_one.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_ameth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_asn1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_chk.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_crpt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_gen.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_none.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_null.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_oaep.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa\rsa_ossl.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_pk1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_pmeth.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_prn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_pss.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_saos.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_sign.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_ssl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\rsa/rsa_x931.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\seed/seed.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\seed/seed_ecb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\seed/seed_cbc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\seed/seed_cfb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\seed/seed_ofb.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\sha/sha1_one.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\sha\sha1dgst.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\sha\sha256.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\sha/sha512.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\srp/srp_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\srp/srp_vfy.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\stack/stack.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\threads_none.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\threads_pthread.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\threads_win.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ts/ts_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\txt_db/txt_db.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\uid.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ui/ui_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ui/ui_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ui/ui_openssl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ui/ui_util.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\whrlpool/wp_dgst.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\whrlpool\wp_block.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/by_dir.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/by_file.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_att.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_cmp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_d2.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_def.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_ext.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_lu.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_obj.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_r2x.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_req.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_set.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_trs.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_txt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_v3.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_vfy.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509_vpm.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509cset.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509name.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509rset.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509spki.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x509type.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509/x_all.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_cache.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_data.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_map.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_node.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/pcy_tree.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_akey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_alt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_bcons.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_bitst.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_conf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_cpols.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_crld.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_enum.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_extku.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_genn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_ia5.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_info.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_int.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_ncons.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_pci.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_pcons.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_pku.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_pmaps.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_prn.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_purp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_skey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_sxnet.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3_utl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3/v3err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3\v3_addr.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3\v3_akeya.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3\v3_asid.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3\v3_pcia.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509v3\v3_tlsf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\t_crl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\t_req.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\t_x509.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_attrib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_crl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_exten.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_name.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_pubkey.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_req.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_x509.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\x509\x_x509a.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\engines\e_padlock.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\bio_ssl.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\d1_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\d1_msg.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\d1_srtp.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\methods.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\pqueue.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\record\dtls1_bitmap.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\record\rec_layer_d1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\record\rec_layer_s3.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\record\ssl3_buffer.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\record\ssl3_record.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_cbc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\s3_msg.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_asn1.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_cert.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_ciph.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_conf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_err.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_init.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_mcnf.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_rsa.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_sess.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_stat.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_txt.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\ssl_utst.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\statem\statem.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\statem\statem_clnt.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\statem\statem_dtls.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\statem\statem_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\statem\statem_srvr.c" />
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_enc.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_ext.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_lib.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_reneg.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\t1_trce.c"/>
+		<ClCompile Include="$(MSBuildThisFileDirectory)openssl\ssl\tls_srp.c"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="$(MSBuildThisFileDirectory)Config\openssl\opensslconf.h" />
+	</ItemGroup>
 </Project>
