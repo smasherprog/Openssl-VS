@@ -18,6 +18,25 @@
       <Platform>ARM</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="openssl\crypto\aes\aes_cbc.c" />
+    <ClCompile Include="openssl\crypto\aes\aes_core.c" />
+    <ClCompile Include="openssl\crypto\armcap.c" />
+    <ClCompile Include="openssl\crypto\bf\bf_enc.c" />
+    <ClCompile Include="openssl\crypto\bn\bn_asm.c" />
+    <ClCompile Include="openssl\crypto\camellia\camellia.c" />
+    <ClCompile Include="openssl\crypto\camellia\cmll_cbc.c" />
+    <ClCompile Include="openssl\crypto\camellia\cmll_misc.c" />
+    <ClCompile Include="openssl\crypto\cast\c_enc.c" />
+    <ClCompile Include="openssl\crypto\chacha\chacha_enc.c" />
+    <ClCompile Include="openssl\crypto\des\des_enc.c" />
+    <ClCompile Include="openssl\crypto\des\fcrypt_b.c" />
+    <ClCompile Include="openssl\crypto\rc4\rc4_enc.c" />
+    <ClCompile Include="openssl\crypto\rc4\rc4_skey.c" />
+  </ItemGroup>
+  <PropertyGroup>
+    <mycflagss>-DOPENSSL_NO_DYNAMIC_ENGINE -DOPENSSL_BN_ASM_MONT -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DVPAES_ASM -DECP_NISTZ256_ASM -DPOLY1305_ASM </mycflagss>
+  </PropertyGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7d1d2793-d4c2-4811-ab50-8407ad02e5e9}</ProjectGuid>
     <Keyword>Android</Keyword>
