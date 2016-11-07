@@ -1,2 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\aes\asm\aesv8-armx.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\arm64cpuid.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bn\asm\armv8-mont.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\ec\asm\ecp_nistz256-armv8.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\modes\asm\ghashv8-armx.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\sha\asm\sha512-armv8.s" />
+    <ClCompile Include="openssl\crypto\camellia\cmll_misc.c" />
+    <ClCompile Include="openssl\crypto\des\des_enc.c" />
+    <ClCompile Include="openssl\crypto\rc4\rc4_skey.c" />
+    <ClCompile Include="openssl\crypto\cast\c_enc.c" />
+    <ClCompile Include="openssl\crypto\aes\aes_core.c" />
+    <ClCompile Include="openssl\crypto\camellia\cmll_cbc.c" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\aes\asm\vpaes-armv8.s" />
+    <ClCompile Include="openssl\crypto\bn\bn_asm.c" />
+    <ClCompile Include="openssl\crypto\camellia\camellia.c" />
+    <ClCompile Include="openssl\crypto\aes\aes_cbc.c" />
+    <ClCompile Include="openssl\crypto\chacha\chacha_enc.c" />
+    <ClCompile Include="openssl\crypto\bf\bf_enc.c" />
+    <ClCompile Include="openssl\crypto\rc4\rc4_enc.c" />
+    <ClCompile Include="openssl\crypto\des\fcrypt_b.c" />
+    <ClCompile Include="openssl\crypto\armcap.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\aes\asm\aesv8-armx.pl" />
+    <CustomBuild Include="openssl\crypto\arm64cpuid.pl" />
+    <CustomBuild Include="openssl\crypto\bn\asm\armv8-mont.pl" />
+    <CustomBuild Include="openssl\crypto\ec\asm\ecp_nistz256-armv8.pl" />
+    <CustomBuild Include="openssl\crypto\modes\asm\ghashv8-armx.pl" />
+    <CustomBuild Include="openssl\crypto\sha\asm\sha512-armv8.pl" />
+    <CustomBuild Include="openssl\crypto\aes\asm\vpaes-armv8.pl" />
+  </ItemGroup>
+</Project>
