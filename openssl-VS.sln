@@ -49,6 +49,7 @@ Global
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Debug_shared|ARM.ActiveCfg = Debug_shared|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Debug_shared|ARM64.ActiveCfg = Debug_shared|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Debug_shared|x64.ActiveCfg = Debug_shared|x64
+		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Debug_shared|x64.Build.0 = Debug_shared|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Debug_shared|x86.ActiveCfg = Debug_shared|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Debug_static|ARM.ActiveCfg = Debug_static|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Debug_static|ARM64.ActiveCfg = Debug_static|x64
@@ -58,6 +59,7 @@ Global
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Release_shared|ARM.ActiveCfg = Release_shared|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Release_shared|ARM64.ActiveCfg = Release_shared|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Release_shared|x64.ActiveCfg = Release_shared|x64
+		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Release_shared|x64.Build.0 = Release_shared|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Release_shared|x86.ActiveCfg = Release_shared|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Release_static|ARM.ActiveCfg = Release_static|x64
 		{C2065F5E-3342-404E-91A8-357EC07D99EA}.Release_static|ARM64.ActiveCfg = Release_static|x64
@@ -86,6 +88,7 @@ Global
 		{F3FED019-AEAB-4521-BF78-23D575796DEE}.Release_static|x86.Build.0 = Release_static|Win32
 		{9629BBDD-4C74-4694-B980-E142649C1C2A}.Debug_shared|ARM.ActiveCfg = Debug_shared|ARM64
 		{9629BBDD-4C74-4694-B980-E142649C1C2A}.Debug_shared|ARM64.ActiveCfg = Debug_shared|ARM64
+		{9629BBDD-4C74-4694-B980-E142649C1C2A}.Debug_shared|ARM64.Build.0 = Debug_shared|ARM64
 		{9629BBDD-4C74-4694-B980-E142649C1C2A}.Debug_shared|x64.ActiveCfg = Debug_shared|ARM64
 		{9629BBDD-4C74-4694-B980-E142649C1C2A}.Debug_shared|x86.ActiveCfg = Debug_shared|ARM64
 		{9629BBDD-4C74-4694-B980-E142649C1C2A}.Debug_static|ARM.ActiveCfg = Debug_static|ARM64
@@ -104,6 +107,7 @@ Global
 		{9629BBDD-4C74-4694-B980-E142649C1C2A}.Release_static|x64.ActiveCfg = Release_static|ARM64
 		{9629BBDD-4C74-4694-B980-E142649C1C2A}.Release_static|x86.ActiveCfg = Release_static|ARM64
 		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Debug_shared|ARM.ActiveCfg = Debug_shared|ARM
+		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Debug_shared|ARM.Build.0 = Debug_shared|ARM
 		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Debug_shared|ARM64.ActiveCfg = Debug_shared|ARM
 		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Debug_shared|x64.ActiveCfg = Debug_shared|ARM
 		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Debug_shared|x86.ActiveCfg = Debug_shared|ARM
@@ -113,6 +117,7 @@ Global
 		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Debug_static|x64.ActiveCfg = Debug_static|ARM
 		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Debug_static|x86.ActiveCfg = Debug_static|ARM
 		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Release_shared|ARM.ActiveCfg = Release_shared|ARM
+		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Release_shared|ARM.Build.0 = Release_shared|ARM
 		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Release_shared|ARM64.ActiveCfg = Release_shared|ARM
 		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Release_shared|x64.ActiveCfg = Release_shared|ARM
 		{7D1D2793-D4C2-4811-AB50-8407AD02E5E9}.Release_shared|x86.ActiveCfg = Release_shared|ARM
@@ -124,6 +129,7 @@ Global
 		{1475A78A-1F1C-4A18-A4F9-668230D3007A}.Debug_shared|ARM.ActiveCfg = Debug_shared|x64
 		{1475A78A-1F1C-4A18-A4F9-668230D3007A}.Debug_shared|ARM64.ActiveCfg = Debug_shared|x64
 		{1475A78A-1F1C-4A18-A4F9-668230D3007A}.Debug_shared|x64.ActiveCfg = Debug_shared|x64
+		{1475A78A-1F1C-4A18-A4F9-668230D3007A}.Debug_shared|x64.Build.0 = Debug_shared|x64
 		{1475A78A-1F1C-4A18-A4F9-668230D3007A}.Debug_shared|x86.ActiveCfg = Debug_shared|x64
 		{1475A78A-1F1C-4A18-A4F9-668230D3007A}.Debug_static|ARM.ActiveCfg = Debug_static|x64
 		{1475A78A-1F1C-4A18-A4F9-668230D3007A}.Debug_static|ARM64.ActiveCfg = Debug_static|x64

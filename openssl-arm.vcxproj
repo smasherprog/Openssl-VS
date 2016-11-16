@@ -86,21 +86,25 @@
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>openssl</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>openssl</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>openssl</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>openssl</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">
     <ClCompile>
