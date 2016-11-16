@@ -449,7 +449,7 @@ move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetName>openssl</TargetName>
-    <TargetExt>.s</TargetExt>
+    <TargetExt>.a</TargetExt>
     <UseMultiToolTask>true</UseMultiToolTask>
     <IncludePath>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
   </PropertyGroup>
@@ -465,7 +465,7 @@ move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
     <OutDir>$(SolutionDir)Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetName>openssl</TargetName>
-    <TargetExt>.s</TargetExt>
+    <TargetExt>.a</TargetExt>
     <UseMultiToolTask>true</UseMultiToolTask>
     <IncludePath>$(MSBuildThisFileDirectory)openssl\crypto\;$(MSBuildThisFileDirectory)openssl\crypto\aes\;$(MSBuildThisFileDirectory)openssl\include\;$(MSBuildThisFileDirectory)Config\;$(MSBuildThisFileDirectory)openssl\crypto\include\;$(MSBuildThisFileDirectory)openssl\</IncludePath>
   </PropertyGroup>
