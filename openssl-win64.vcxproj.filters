@@ -36,5 +36,6 @@
     <ClCompile Include="openssl\crypto\cast\c_enc.c" />
     <ClCompile Include="openssl\crypto\camellia\cmll_misc.c" />
     <ClCompile Include="openssl\crypto\bn\bn_asm.c" />
+    <ClCompile Include="openssl\crypto\ec\ecp_nistz256.c" />
   </ItemGroup>
 </Project>

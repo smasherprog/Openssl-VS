@@ -33,6 +33,7 @@
     <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\camellia\asm\cmll-x86_64.s" />
     <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\chacha\asm\chacha-x86_64.s" />
     <ClCompile Include="openssl\crypto\des\fcrypt_b.c" />
+    <ClCompile Include="openssl\crypto\ec\ecp_nistz256.c" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="openssl\engines\asm\e_padlock-x86_64.pl" />

@@ -281,7 +281,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistp256.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistp521.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistputil.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecp_nistz256.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\ec\ecx_meth.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_all.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\engine/eng_cryptodev.c" />
@@ -396,7 +395,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/ccm128.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/cfb128.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/ctr128.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/gcm128.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes\gcm128.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes\ocb128.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/ofb128.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)openssl\crypto\modes/xts128.c" />

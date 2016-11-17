@@ -15,5 +15,13 @@
     <ClCompile Include="openssl\crypto\des\fcrypt_b.c" />
     <ClCompile Include="openssl\crypto\rc4\rc4_enc.c" />
     <ClCompile Include="openssl\crypto\rc4\rc4_skey.c" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\aes\asm\aesv8-armx.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\armv4cpuid.s" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\modes\asm\ghash-armv4.s" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\aes\asm\aesv8-armx.pl" />
+    <CustomBuild Include="openssl\crypto\armv4cpuid.pl" />
+    <CustomBuild Include="openssl\crypto\modes\asm\ghash-armv4.pl" />
   </ItemGroup>
 </Project>

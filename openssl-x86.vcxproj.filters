@@ -53,5 +53,6 @@
     <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\sha\asm\sha512-586.s" />
     <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\whrlpool\asm\wp-mmx.s" />
     <ClCompile Include="$(IntermediateOutputPath)openssl\engines\asm\e_padlock-x86.s" />
+    <ClCompile Include="openssl\crypto\ec\ecp_nistz256.c" />
   </ItemGroup>
 </Project>

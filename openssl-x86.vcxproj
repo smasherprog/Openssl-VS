@@ -936,6 +936,7 @@ move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
       </CompileAs>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug_shared|x86'">%(PreprocessorDefinitions);$(mycflags)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="openssl\crypto\ec\ecp_nistz256.c" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\bf\asm\bf-586.s">

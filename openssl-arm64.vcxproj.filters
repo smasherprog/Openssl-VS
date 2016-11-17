@@ -22,6 +22,7 @@
     <ClCompile Include="openssl\crypto\rc4\rc4_enc.c" />
     <ClCompile Include="openssl\crypto\des\fcrypt_b.c" />
     <ClCompile Include="openssl\crypto\armcap.c" />
+    <ClCompile Include="openssl\crypto\ec\ecp_nistz256.c" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="openssl\crypto\aes\asm\aesv8-armx.pl" />

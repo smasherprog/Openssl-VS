@@ -27,4 +27,7 @@
     <CustomBuild Include="openssl\crypto\x86cpuid.pl" />
     <CustomBuild Include="openssl\engines\asm\e_padlock-x86.pl" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="openssl\crypto\ec\ecp_nistz256.c" />
+  </ItemGroup>
 </Project>

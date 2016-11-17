@@ -823,6 +823,9 @@ $(SolutionDir)nasm.exe -f win$(PlatformArchitecture) "$(SolutionDir)$(Intermedia
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|Win32'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).obj</Outputs>
     </CustomBuild>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="openssl\crypto\ec\ecp_nistz256.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F3FED019-AEAB-4521-BF78-23D575796DEE}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

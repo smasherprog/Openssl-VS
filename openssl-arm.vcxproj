@@ -33,7 +33,176 @@
     <ClCompile Include="openssl\crypto\des\fcrypt_b.c" />
     <ClCompile Include="openssl\crypto\rc4\rc4_enc.c" />
     <ClCompile Include="openssl\crypto\rc4\rc4_skey.c" />
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\aes\asm\aesv8-armx.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">
+      </CompileAs>
+    </ClCompile>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\armv4cpuid.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">
+      </CompileAs>
+    </ClCompile>
+    <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\modes\asm\ghashv8-armx.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">
+      </CompileAs>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">-fno-integrated-as</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">-fno-integrated-as</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">-fno-integrated-as</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">-fno-integrated-as</AdditionalOptions>
+    </ClCompile>
+	  <ClCompile Include="$(IntermediateOutputPath)openssl\crypto\modes\asm\ghash-armv4.s">
+      <FileType>Document</FileType>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">
+      </CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">
+      </CompileAs>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">-fno-integrated-as</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">-fno-integrated-as</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">-fno-integrated-as</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">-fno-integrated-as</AdditionalOptions>
+    </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\aes\asm\aesv8-armx.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\armv4cpuid.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="openssl\crypto\modes\asm\ghashv8-armx.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+   <ItemGroup>
+    <CustomBuild Include="openssl\crypto\modes\asm\ghash-armv4.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">if not exist "$(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)" mkdir $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)
+
+cd %(RootDir)%(Directory)
+perl "%(Filename)%(Extension)" %(Filename).s &gt; %(Filename).s
+move /Y %(Filename).s $(SolutionDir)$(IntermediateOutputPath)%(RelativeDir)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_static|ARM'">$(IntermediateOutputPath)%(RelativeDir)%(Filename).s</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  
   <PropertyGroup>
     <mycflagss>-DOPENSSL_NO_DYNAMIC_ENGINE -DOPENSSL_BN_ASM_MONT -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DVPAES_ASM -DECP_NISTZ256_ASM -DPOLY1305_ASM </mycflagss>
   </PropertyGroup>
@@ -53,6 +222,7 @@
     <PlatformToolset>Clang_3_8</PlatformToolset>
     <UseOfStl>c++_static</UseOfStl>
     <AndroidAPILevel>android-21</AndroidAPILevel>
+    <ThumbMode>ARM</ThumbMode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_shared|ARM'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -60,6 +230,7 @@
     <PlatformToolset>Clang_3_8</PlatformToolset>
     <UseOfStl>c++_shared</UseOfStl>
     <AndroidAPILevel>android-21</AndroidAPILevel>
+    <ThumbMode>ARM</ThumbMode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_static|ARM'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -67,6 +238,7 @@
     <PlatformToolset>Clang_3_8</PlatformToolset>
     <UseOfStl>c++_static</UseOfStl>
     <AndroidAPILevel>android-21</AndroidAPILevel>
+    <ThumbMode>ARM</ThumbMode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_shared|ARM'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -74,6 +246,7 @@
     <PlatformToolset>Clang_3_8</PlatformToolset>
     <UseOfStl>c++_shared</UseOfStl>
     <AndroidAPILevel>android-21</AndroidAPILevel>
+    <ThumbMode>ARM</ThumbMode>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />

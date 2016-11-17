@@ -27,6 +27,7 @@
     <ClCompile Include="openssl\crypto\cast\c_enc.c" />
     <ClCompile Include="openssl\crypto\des\des_enc.c" />
     <ClCompile Include="openssl\crypto\des\fcrypt_b.c" />
+    <ClCompile Include="openssl\crypto\ec\ecp_nistz256.c" />
     <ClCompile Include="openssl\crypto\pkcs7\bio_pk7.c" />
     <ClCompile Include="openssl\crypto\rand\rand_egd.c" />
     <ClCompile Include="openssl\crypto\rand\rand_vms.c" />
