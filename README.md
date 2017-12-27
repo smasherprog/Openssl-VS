@@ -1,3 +1,4 @@
+# Use vcpkg instead of this 
 <h2>Openssl Visual Studio projects</h2>
 <p>This repository contains Visual studio projects for openssl.</p>
 <p>Requirements: Perl for windows. I use http://strawberryperl.com/</p>
